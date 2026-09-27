@@ -1,0 +1,21 @@
+{
+  "name": "restaurant-platform",
+  "private": true,
+  "workspaces": [
+    "apps/web",
+    "apps/api"
+  ],
+  "scripts": {
+    "dev": "npm run dev --workspace apps/api & npm run dev --workspace apps/web",
+    "dev:web": "npm run dev --workspace apps/web",
+    "dev:api": "npm run dev --workspace apps/api",
+    "build": "npm run build --workspace apps/api && npm run build --workspace apps/web"
+  },
+  "allowScripts": {
+    "prisma@7.10.0": true,
+    "@prisma/engines@7.10.0": true
+  },
+  "dependencies": {
+    "@prisma/client": "^7.10.0"
+  }
+}
