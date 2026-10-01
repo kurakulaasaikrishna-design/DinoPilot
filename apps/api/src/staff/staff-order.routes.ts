@@ -40,7 +40,6 @@ router.get('/', async (req: AuthenticatedRequest, res) => {
       'READY',
       'COMPLETED',
       'CANCELLED',
-      'REFUNDED',
     ];
 
     if (status && !allowedStatuses.includes(status)) {
@@ -79,7 +78,7 @@ router.get(
 
       const order = await getStaffOrder(
         req.user.restaurantId,
-        req.params.id,
+        String(req.params.id),
       );
 
       return res.json(order);
@@ -127,7 +126,7 @@ router.post(
 
       const order = await assignTable(
         req.user.restaurantId,
-        req.params.id,
+        String(req.params.id),
         body.tableNumber,
       );
 
@@ -185,14 +184,13 @@ router.patch(
             'READY',
             'COMPLETED',
             'CANCELLED',
-            'REFUNDED',
           ]),
         })
         .parse(req.body);
 
       const order = await updateOrderStatus(
         req.user.restaurantId,
-        req.params.id,
+        String(req.params.id),
         req.user.id,
         body.status,
       );

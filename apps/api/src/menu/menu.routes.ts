@@ -134,7 +134,7 @@ router.patch(
 
       const category = await updateCategory(
         req.user.restaurantId,
-        req.params.id,
+        String(req.params.id),
         data,
       );
 
@@ -174,7 +174,7 @@ router.delete(
 
       await deleteCategory(
         req.user.restaurantId,
-        req.params.id,
+        String(req.params.id),
       );
 
       return res.json({
@@ -251,7 +251,7 @@ router.patch(
 
       const item = await updateMenuItem(
         req.user.restaurantId,
-        req.params.id,
+        String(req.params.id),
         data,
       );
 
@@ -291,7 +291,7 @@ router.delete(
 
       await deleteMenuItem(
         req.user.restaurantId,
-        req.params.id,
+        String(req.params.id),
       );
 
       return res.json({
@@ -327,7 +327,7 @@ router.patch(
 
       const item = await updateMenuItemAvailability(
         req.user.restaurantId,
-        req.params.id,
+        String(req.params.id),
         isAvailable,
       );
 

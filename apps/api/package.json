@@ -29,6 +29,6 @@
     "@types/node": "latest",
     "prisma": "^7.10.0",
     "tsx": "latest",
-    "typescript": "latest"
+    "typescript": "^7.0.2"
   }
 }

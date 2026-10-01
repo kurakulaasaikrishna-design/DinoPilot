@@ -93,8 +93,7 @@ export async function updateOrderStatus(
     | 'PREPARING'
     | 'READY'
     | 'COMPLETED'
-    | 'CANCELLED'
-    | 'REFUNDED',
+    | 'CANCELLED',
 ) {
   const order = await prisma.order.findFirst({
     where: {
@@ -107,24 +106,33 @@ export async function updateOrderStatus(
     throw new Error('Order not found');
   }
 
-  const data: {
-    orderStatus: typeof orderStatus;
-    completedAt?: Date;
-    completedById?: string;
-  } = {
-    orderStatus,
-  };
-
   if (orderStatus === 'COMPLETED') {
-    data.completedAt = new Date();
-    data.completedById = userId;
+    return prisma.order.update({
+      where: {
+        id: orderId,
+      },
+      data: {
+        orderStatus,
+        completedAt: new Date(),
+        completedBy: {
+          connect: {
+            id: userId,
+          },
+        },
+      },
+      include: {
+        items: true,
+      },
+    });
   }
 
   return prisma.order.update({
     where: {
       id: orderId,
     },
-    data,
+    data: {
+      orderStatus,
+    },
     include: {
       items: true,
     },
