@@ -1,4 +1,4 @@
-import { prisma } from '../lib/prisma';
+import { prisma } from '../lib/prisma.js';
 
 type CreateOrderInput = {
   customerName: string;
@@ -91,3 +91,4 @@ export async function createOrder(
     },
   });
 }
+

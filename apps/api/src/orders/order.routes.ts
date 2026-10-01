@@ -1,8 +1,8 @@
 import { Router } from 'express';
 import { z } from 'zod';
 
-import { prisma } from '../lib/prisma';
-import { createOrder } from './order.service';
+import { prisma } from '../lib/prisma.js';
+import { createOrder } from './order.service.js';
 
 const router = Router();
 
@@ -75,3 +75,4 @@ router.post('/', async (req, res) => {
 });
 
 export default router;
+

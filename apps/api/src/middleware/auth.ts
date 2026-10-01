@@ -1,6 +1,6 @@
 import type { NextFunction, Request, Response } from 'express';
 import jwt from 'jsonwebtoken';
-import { prisma } from '../lib/prisma';
+import { prisma } from '../lib/prisma.js';
 
 type AuthPayload = {
   userId: string;
@@ -103,3 +103,4 @@ export function requireRole(...roles: Array<'OWNER' | 'STAFF'>) {
     next();
   };
 }
+

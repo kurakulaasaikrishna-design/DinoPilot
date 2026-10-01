@@ -1,6 +1,6 @@
 import { Router } from 'express';
 import { z } from 'zod';
-import { loginUser } from './auth.service';
+import { loginUser } from './auth.service.js';
 
 const router = Router();
 
@@ -31,3 +31,4 @@ router.post('/login', async (req, res) => {
 });
 
 export default router;
+

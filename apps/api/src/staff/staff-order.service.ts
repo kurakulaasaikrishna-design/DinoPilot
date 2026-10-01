@@ -1,4 +1,4 @@
-import { prisma } from '../lib/prisma';
+import { prisma } from '../lib/prisma.js';
 
 export async function getStaffOrders(
   restaurantId: string,
@@ -138,4 +138,6 @@ export async function updateOrderStatus(
     },
   });
 }
+
+
 

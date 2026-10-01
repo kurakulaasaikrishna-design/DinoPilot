@@ -5,7 +5,7 @@ import {
   requireAuth,
   requireRole,
   type AuthenticatedRequest,
-} from '../middleware/auth';
+} from '../middleware/auth.js';
 
 import {
   createCategory,
@@ -16,7 +16,7 @@ import {
   updateCategory,
   updateMenuItem,
   updateMenuItemAvailability,
-} from './menu.service';
+} from './menu.service.js';
 
 const router = Router();
 
@@ -353,3 +353,4 @@ router.patch(
 );
 
 export default router;
+

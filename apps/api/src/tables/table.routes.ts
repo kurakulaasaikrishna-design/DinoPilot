@@ -5,8 +5,8 @@ import {
   deleteTable,
   getTables,
   updateTable,
-} from './table.service';
-import { requireAuth, requireRole } from '../middleware/auth';
+} from './table.service.js';
+import { requireAuth, requireRole } from '../middleware/auth.js';
 
 const router = Router();
 
@@ -103,3 +103,4 @@ router.delete('/:id', async (req, res) => {
 });
 
 export default router;
+

@@ -1,6 +1,6 @@
 import { Router } from 'express';
-import { requireAuth, requireRole } from '../middleware/auth';
-import { getOwnerOrders } from './owner-order.service';
+import { requireAuth, requireRole } from '../middleware/auth.js';
+import { getOwnerOrders } from './owner-order.service.js';
 
 const router = Router();
 
@@ -47,3 +47,4 @@ router.get('/', async (req, res) => {
 });
 
 export default router;
+

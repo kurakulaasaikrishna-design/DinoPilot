@@ -1,4 +1,4 @@
-import { prisma } from '../lib/prisma';
+import { prisma } from '../lib/prisma.js';
 
 export async function getMenu(restaurantId: string) {
   return prisma.category.findMany({
@@ -235,3 +235,4 @@ export async function updateMenuItemAvailability(
     },
   });
 }
+

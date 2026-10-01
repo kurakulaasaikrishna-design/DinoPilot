@@ -1,4 +1,4 @@
-import { prisma } from '../lib/prisma';
+import { prisma } from '../lib/prisma.js';
 
 export async function getOwnerDashboard(restaurantId: string) {
   const startOfToday = new Date();
@@ -135,3 +135,4 @@ export async function getOwnerDashboard(restaurantId: string) {
     })),
   };
 } 
+

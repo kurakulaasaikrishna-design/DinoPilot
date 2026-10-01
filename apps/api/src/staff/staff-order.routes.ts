@@ -5,14 +5,14 @@ import {
   requireAuth,
   requireRole,
   type AuthenticatedRequest,
-} from '../middleware/auth';
+} from '../middleware/auth.js';
 
 import {
   getStaffOrders,
   getStaffOrder,
   assignTable,
   updateOrderStatus,
-} from './staff-order.service';
+} from './staff-order.service.js';
 
 const router = Router();
 
@@ -226,3 +226,4 @@ router.patch(
 );
 
 export default router;
+

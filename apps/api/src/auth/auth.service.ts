@@ -1,6 +1,6 @@
 import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken';
-import { prisma } from '../lib/prisma';
+import { prisma } from '../lib/prisma.js';
 
 function getJwtSecret(): string {
   const secret = process.env.JWT_SECRET;
@@ -56,3 +56,4 @@ export async function loginUser(email: string, password: string) {
     },
   };
 }
+

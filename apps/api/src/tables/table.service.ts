@@ -1,4 +1,4 @@
-import { prisma } from '../lib/prisma';
+import { prisma } from '../lib/prisma.js';
 
 export async function getTables(restaurantId: string) {
   return prisma.restaurantTable.findMany({
@@ -103,3 +103,4 @@ export async function deleteTable(
     },
   });
 }
+

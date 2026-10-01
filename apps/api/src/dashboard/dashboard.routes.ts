@@ -4,9 +4,9 @@ import {
   requireAuth,
   requireRole,
   type AuthenticatedRequest,
-} from '../middleware/auth';
+} from '../middleware/auth.js';
 
-import { getOwnerDashboard } from './dashboard.service';
+import { getOwnerDashboard } from './dashboard.service.js';
 
 const router = Router();
 
@@ -38,3 +38,4 @@ router.get(
 );
 
 export default router;
+
