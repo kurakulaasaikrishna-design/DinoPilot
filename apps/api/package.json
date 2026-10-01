@@ -24,6 +24,7 @@
     "zod": "^4.6.5"
   },
   "devDependencies": {
+    "@prisma/config": "^7.10.0",
     "@types/cors": "latest",
     "@types/express": "latest",
     "@types/jsonwebtoken": "^9.0.10",
