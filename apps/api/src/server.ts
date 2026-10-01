@@ -2,21 +2,27 @@ import 'dotenv/config';
 import cors from 'cors';
 import express from 'express';
 
-import { prisma } from './lib/prisma';
-import authRoutes from './auth/auth.routes';
+import { prisma } from './lib/prisma.js';
 
-import dashboardRoutes from './dashboard/dashboard.routes';
-import menuRoutes from './menu/menu.routes';
-import orderRoutes from './orders/order.routes';
-import staffOrderRoutes from './staff/staff-order.routes';
-import ownerOrderRoutes from './owner/owner-order.routes';
-import tableRoutes from './tables/table.routes';
+import authRoutes from './auth/auth.routes.js';
+
+import dashboardRoutes from './dashboard/dashboard.routes.js';
+
+import menuRoutes from './menu/menu.routes.js';
+
+import orderRoutes from './orders/order.routes.js';
+
+import staffOrderRoutes from './staff/staff-order.routes.js';
+
+import ownerOrderRoutes from './owner/owner-order.routes.js';
+
+import tableRoutes from './tables/table.routes.js';
 
 import {
   requireAuth,
   requireRole,
   type AuthenticatedRequest,
-} from './middleware/auth';
+} from './middleware/auth.js';
 
 const app = express();
 const port = Number(process.env.PORT ?? 4000);
